@@ -2,7 +2,7 @@
 #define PRINCIPAL_H
 
 #include <QMainWindow>
-
+#include <QPaintEvent>
 QT_BEGIN_NAMESPACE
 namespace Ui { class Principal; }
 QT_END_NAMESPACE
@@ -35,5 +35,7 @@ private:
     void dibujar();
     int getAlto(int valor);
     int incY(int alto);
+    int promedio(int n1, int n2, int n3);
+
 };
 #endif // PRINCIPAL_H

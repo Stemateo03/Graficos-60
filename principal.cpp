@@ -25,6 +25,7 @@ Principal::~Principal()
 void Principal::paintEvent(QPaintEvent *event)
 {
     ui->outCuadro->setPixmap(lienzo);
+    event->accept();
 }
 
 void Principal::dibujar()
@@ -100,6 +101,28 @@ void Principal::dibujar()
     // Dibujar tercera barra
     painter.drawRect(x+290,y+50+ incYN3,100,altoN3);
 
+    //Estsablecer colores al pincel
+    QColor cProm(19, 12, 25);
+    pincel.setColor(cProm);
+    painter.setPen(pincel);
+
+    float prom1 =promedio( nota1, nota2,nota3);
+    int altoN4 = this->getAlto(prom1);
+    int incYN4 = this->incY(altoN4);
+    painter.drawLine(x+25,incYN4+50,450,incYN4+50);
+
+    //Crear color del plano
+    QColor cPlano(14,4,22);
+    //Establecer colores al pincel
+    pincel.setColor(cPlano);
+    painter.setPen(pincel);
+
+    //Dibujar un plano
+
+    painter.drawLine(x+25,y+450,450,+450);
+    painter.drawLine(x+25,y+15,x+25,+50);
+
+
 }
 
 int Principal::getAlto(int valor)
@@ -110,6 +133,11 @@ int Principal::getAlto(int valor)
 int Principal::incY(int alto)
 {
     return 400 - alto;
+}
+
+int Principal::promedio(int n1, int n2, int n3)
+{
+
 }
 
 

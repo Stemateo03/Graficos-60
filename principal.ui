@@ -88,13 +88,6 @@
        </layout>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Promediar</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
   </widget>
